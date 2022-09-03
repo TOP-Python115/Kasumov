@@ -14,7 +14,7 @@ class VectorRenderer(Renderer):
         print(f'Drawing {name} as lines')
 
 
-class RasterRenderer:
+class RasterRenderer(Renderer):
     """Класс для создания пиксельных фигур"""
     def what_to_render_as(self, name: str):
         print(f'Drawing {name} as pixels')
