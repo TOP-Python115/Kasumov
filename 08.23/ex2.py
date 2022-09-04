@@ -62,11 +62,15 @@ square_vector = Square(sq)
 print("To select the shape you need, type a number from 1 to 4")
 inp = int(sys.stdin.readline())
 
-if inp == 1:
-    triangle_raster.create_shape()
-elif inp == 2:
-    triangle_vector.create_shape()
-elif inp == 3:
-    square_vector.create_shape()
-elif inp == 4:
-    square_raster.create_shape()
+while not 1 <= inp <= 4:
+    print("To select the shape you need, type a number from 1 to 4")
+    inp = int(sys.stdin.readline())
+else:
+    if inp == 1:
+        triangle_raster.create_shape()
+    elif inp == 2:
+        triangle_vector.create_shape()
+    elif inp == 3:
+        square_vector.create_shape()
+    elif inp == 4:
+        square_raster.create_shape()
