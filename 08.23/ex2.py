@@ -21,15 +21,15 @@ class RasterRenderer(Renderer):
 
 
 class Shape(ABC):
-    def __init__(self):
+    def __init__(self, renderer: Renderer):
+        self.renderer = renderer
         self.name = None
 
 
 class Triangle(Shape):
     """Класс создающий треугольник,  в конструктор которого принимается класс Renderer """
     def __init__(self, renderer: Renderer):
-        super().__init__()
-        self.renderer = renderer
+        super().__init__(renderer)
         self.name = 'Triangle'
 
     def create_shape(self):
@@ -40,8 +40,7 @@ class Triangle(Shape):
 class Square(Shape):
     """Класс создающий квадрат, в конструктор которого принимается класс Renderer """
     def __init__(self, renderer: Renderer):
-        super().__init__()
-        self.renderer = renderer
+        super().__init__(renderer)
         self.name = 'Square'
 
     def create_shape(self):
